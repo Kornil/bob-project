@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
-import express from "express"; /* 
-import mongoose from "mongoose"; */
+import express from "express"; 
+import mongoose from "mongoose";
 
 import "es6-promise/auto";
 import "isomorphic-fetch";
@@ -24,8 +24,8 @@ import webpack from "webpack";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 import webpackConfig from "../../webpack.config";
-/* 
-dotenv.config(); */
+
+dotenv.config();
 
 const app = express();
 
@@ -37,10 +37,10 @@ const store = createStore(
   applyMiddleware(...middleware),
 );
 
-/* mongoose.connect(
+mongoose.connect(
   process.env.DB_USER,
   { useNewUrlParser: true }
-); */
+);
 
 /* istanbul ignore next */
 if (process.env.NODE_ENV === "development") {
