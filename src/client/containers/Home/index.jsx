@@ -37,7 +37,7 @@ class Home extends Component {
     return (
       <div>
         <h2>Home Page</h2>
-        <NewUser />
+        <NewUser fetchData={this.fetchData} />
         {users.map(user => (
           <Card key={user._id} user={user} />
         ))}

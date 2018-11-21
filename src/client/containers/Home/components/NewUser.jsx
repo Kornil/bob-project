@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NewUser extends Component {
   sendData = async (e) => {
     const name = e.target.elements.name.value;
     const bags = e.target.elements.bags.value;
     e.preventDefault();
-    await fetch(`/new?name=${name}&bags=${bags}`, {
-      method: 'POST',
-    });
+    try {
+      await fetch(`/new?name=${name}&bags=${bags}`, {
+        method: 'POST',
+      });
+    } finally {
+      this.props.fetchData();
+    }
   };
 
   render() {
@@ -20,5 +25,9 @@ class NewUser extends Component {
     );
   }
 }
+
+NewUser.propTypes = {
+  fetchData: PropTypes.func.isRequired,
+};
 
 export default NewUser;

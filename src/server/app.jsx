@@ -49,10 +49,9 @@ app.use(express.static('public'));
 app.post('/new', async (req, res) => {
   const user = req.query;
 
-  User.create({ Name: user.name, Bags: user.bags }, (err) => {
-    if (err) return res.send(err);
-    return res.redirect('/');
-  });
+  User.create({ Name: user.name, Bags: user.bags })
+    .then(() => res.send(200))
+    .catch(err => res.send(err));
 });
 
 app.get('/get_data', (req, res) => {
