@@ -1,17 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<Provider
-  store={
-    Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
-    }
-  }
->
-  <Connect(Home) />
-</Provider>
+<div>
+  <h2>
+    Home Page
+  </h2>
+  <NewUser />
+</div>
 `;

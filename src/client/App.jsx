@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Routes from "./Routes";
+import Routes from './Routes';
 
 const App = () => (
   <main className="container">

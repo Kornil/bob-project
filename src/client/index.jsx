@@ -13,7 +13,7 @@ const render = Component => {
   renderMethod(
     <BrowserRouter>
       <AppContainer>
-          <Component />
+        <Component />
       </AppContainer>
     </BrowserRouter>,
     root

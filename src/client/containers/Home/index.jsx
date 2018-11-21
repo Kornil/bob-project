@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { NewUser } from "./components"
+import { NewUser, Card } from './components';
 
 class Home extends Component {
   render() {
