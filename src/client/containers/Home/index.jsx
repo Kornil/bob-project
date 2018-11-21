@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import styled from 'react-emotion';
 
 import { NewUser, Card } from './components';
+
+const StyledCardsContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8%;
+`;
 
 class Home extends Component {
   state = {
@@ -36,11 +43,12 @@ class Home extends Component {
     const { users } = this.state;
     return (
       <div>
-        <h2>Home Page</h2>
         <NewUser fetchData={this.fetchData} />
-        {users.map(user => (
-          <Card key={user._id} user={user} />
-        ))}
+        <StyledCardsContainer>
+          {users.map(user => (
+            <Card key={user._id} user={user} />
+          ))}
+        </StyledCardsContainer>
       </div>
     );
   }
