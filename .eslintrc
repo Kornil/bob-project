@@ -8,6 +8,7 @@
   },
   "rules": {
     "import/first": ["off"],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-underscore-dangle": ["off"]
   }
 }
