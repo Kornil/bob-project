@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "now": {
+    "alias": "bob-project",
+    "version": 1,
+    "env": {
+      "BOB_USER": "@bob_user"
+    }
+  },
   "scripts": {
     "start": "node server.js",
     "start--dev": "NODE_ENV=development webpack -w & node server.js",
