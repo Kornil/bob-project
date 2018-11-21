@@ -9,6 +9,7 @@ import 'isomorphic-fetch';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
+import { JssProvider, SheetsRegistry } from 'react-jss';
 
 import App from '../client/App';
 import htmlMarkup from './htmlMarkup';
@@ -61,11 +62,15 @@ app.get('/get_data', (req, res) => {
 });
 
 app.get('*', (req, res) => {
+  const sheets = new SheetsRegistry();
   const context = {};
+
   const markup = renderToString(
-    <StaticRouter location={req.url} context={context}>
-      <App />
-    </StaticRouter>,
+    <JssProvider registry={sheets}>
+      <StaticRouter location={req.url} context={context}>
+        <App />
+      </StaticRouter>
+    </JssProvider>,
   );
 
   /* istanbul ignore next */
@@ -75,7 +80,7 @@ app.get('*', (req, res) => {
     });
     res.end();
   }
-  res.send(htmlMarkup(markup));
+  res.send(htmlMarkup(markup, sheets));
 });
 
 export default app;

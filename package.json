@@ -95,13 +95,17 @@
     "es6-promise": "^4.2.5",
     "express": "^4.16.4",
     "isomorphic-fetch": "^2.2.1",
+    "jss": "^9.8.7",
+    "jss-vendor-prefixer": "^8.0.1",
     "mongoose": "^5.3.13",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-jss": "^8.6.1",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-jss": "^2.2.3"
   }
 }

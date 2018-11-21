@@ -1,4 +1,4 @@
-const htmlMarkup = markup => `
+const htmlMarkup = (markup, sheets) => `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +13,9 @@ const htmlMarkup = markup => `
   <meta name="theme-color" content="#ffffff">
   <meta name="application-name" content="Bob Project">
   <meta name="Description" content="Test project for bob.io">
+  <style type="text/css" id="server-side-styles">
+    ${sheets.toString()}
+  </style>
 
   <script src="/bundle.js" defer></script>
 
