@@ -18,6 +18,7 @@
     "test--ci": "jest --coverage --runInBand --forceExit",
     "test--watch": "jest --watch --verbose",
     "test--snapshots": "jest --updateSnapshot",
+    "lint": "stylelint 'src/client/**/*.js' 'src/client/**/*.jsx'",
     "prettier": "prettier --write 'src/client/**/*.js' 'src/client/**/*.jsx'"
   },
   "keywords": [],
@@ -74,6 +75,10 @@
     "redux-logger": "^3.0.6",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.18.2",
+    "stylelint": "^9.8.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.5.1",
     "superagent": "^4.0.0",
     "supertest": "^3.3.0",
     "url-loader": "^1.1.2",
