@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Home from '.';
 
-it('renders without crashing', () => {
+it('matches snapshot', () => {
   const snap = shallow(<Home />);
   expect(snap).toMatchSnapshot();
 });

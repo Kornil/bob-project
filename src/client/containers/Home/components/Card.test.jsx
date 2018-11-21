@@ -1,16 +1,15 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 
-import App from './App';
+import Card from './Card';
+
+const user = {
+  Name: 'Bob',
+  Bags: 4,
+};
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
-    div,
-  );
+  render(<Card user={user} />, div);
   unmountComponentAtNode(div);
 });
