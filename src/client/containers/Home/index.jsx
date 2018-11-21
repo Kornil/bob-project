@@ -30,7 +30,7 @@ class Home extends Component {
         status: 'error',
       });
     }
-  }
+  };
 
   render() {
     const { users } = this.state;

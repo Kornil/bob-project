@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
-import App from './App';
+import Home from '.';
 
 it('renders without crashing', () => {
-  const snap = shallow(<App />);
+  const snap = shallow(<Home />);
   expect(snap).toMatchSnapshot();
 });

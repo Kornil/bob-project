@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 class NewUser extends Component {
   sendData = async (e) => {
+    const { fetchData } = this.props;
     const name = e.target.elements.name.value;
     const bags = e.target.elements.bags.value;
     e.preventDefault();
@@ -11,7 +12,7 @@ class NewUser extends Component {
         method: 'POST',
       });
     } finally {
-      this.props.fetchData();
+      fetchData();
     }
   };
 

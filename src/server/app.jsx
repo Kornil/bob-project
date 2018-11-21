@@ -11,14 +11,14 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { JssProvider, SheetsRegistry } from 'react-jss';
 
-import App from '../client/App';
-import htmlMarkup from './htmlMarkup';
-
 // webpack stuff for hot-reload
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../../webpack.config';
+
+import App from '../client/App';
+import htmlMarkup from './htmlMarkup';
 
 import User from './UserSchema';
 
