@@ -2,11 +2,9 @@
 
 exports[`renders without crashing 1`] = `
 <div>
-  <h2>
-    Home Page
-  </h2>
   <NewUser
     fetchData={[Function]}
   />
+  <StyledCardsContainer />
 </div>
 `;

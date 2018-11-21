@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders without crashing 1`] = `
-<main
-  className="container"
->
+<StyledBody>
   <div>
     <h1>
       hello world!
@@ -11,19 +9,7 @@ exports[`renders without crashing 1`] = `
     <p>
       If you see this everything is working!
     </p>
+    <Routes />
   </div>
-  <ul
-    className="left"
-  >
-    <li>
-      <Link
-        replace={false}
-        to="/"
-      >
-        Home
-      </Link>
-    </li>
-  </ul>
-  <Routes />
-</main>
+</StyledBody>
 `;
