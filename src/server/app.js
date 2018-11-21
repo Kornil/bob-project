@@ -23,7 +23,7 @@ dotenv.config();
 const app = express();
 
 mongoose.connect(
-  process.env.DB_USER,
+  process.env.BOB_USER,
   { useNewUrlParser: true }
 );
 
