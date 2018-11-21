@@ -51,7 +51,7 @@ app.post('/new', async (req, res) => {
 
   User.create({ Name: user.name, Bags: user.bags })
     .then(() => res.send(200))
-    .catch(err => res.send(err));
+    .catch(err => res.status(400).send(err));
 });
 
 app.get('/get_data', (req, res) => {
