@@ -1,21 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Routes from './Routes';
 
+import { StyledBody } from './styled-components';
+
 const App = () => (
-  <main className="container">
+  <StyledBody>
     <div>
       <h1>hello world!</h1>
       <p>If you see this everything is working!</p>
+      <Routes />
     </div>
-    <ul className="left">
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-    </ul>
-    <Routes />
-  </main>
+  </StyledBody>
 );
 
 export default App;
