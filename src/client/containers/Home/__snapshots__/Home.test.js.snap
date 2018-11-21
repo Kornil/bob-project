@@ -5,6 +5,8 @@ exports[`renders without crashing 1`] = `
   <h2>
     Home Page
   </h2>
-  <NewUser />
+  <NewUser
+    fetchData={[Function]}
+  />
 </div>
 `;
