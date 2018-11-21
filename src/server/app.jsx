@@ -9,7 +9,7 @@ import 'isomorphic-fetch';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import { JssProvider, SheetsRegistry } from 'react-jss';
+import { renderStylesToString } from 'emotion-server';
 
 // webpack stuff for hot-reload
 import webpack from 'webpack';
@@ -62,15 +62,14 @@ app.get('/get_data', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  const sheets = new SheetsRegistry();
   const context = {};
 
-  const markup = renderToString(
-    <JssProvider registry={sheets}>
+  const markup = renderStylesToString(
+    renderToString(
       <StaticRouter location={req.url} context={context}>
         <App />
-      </StaticRouter>
-    </JssProvider>,
+      </StaticRouter>,
+    ),
   );
 
   /* istanbul ignore next */
@@ -80,7 +79,7 @@ app.get('*', (req, res) => {
     });
     res.end();
   }
-  res.send(htmlMarkup(markup, sheets));
+  res.send(htmlMarkup(markup));
 });
 
 export default app;

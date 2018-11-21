@@ -10,6 +10,7 @@
     ]
   ],
   "plugins": [
+    ["emotion", { "hoist": true }],
     "react-hot-loader/babel",
     "@babel/plugin-proposal-object-rest-spread",
     "@babel/plugin-proposal-class-properties",
@@ -17,7 +18,11 @@
   ],
   "env": {
     "development": {
-      "compact": false
+      "compact": false,
+      "plugins": [["emotion", { "sourceMap": true, "autoLabel": true }]]
+    },
+    "production": {
+      "plugins": [["emotion", { "hoist": true }]]
     },
     "test": {
       "presets": [
@@ -29,7 +34,10 @@
           }
         ]
       ],
-      "plugins": ["@babel/plugin-transform-runtime"]
+      "plugins": [
+        "@babel/plugin-transform-runtime",
+        ["emotion", { "sourceMap": true, "autoLabel": true }]
+      ]
     }
   }
 }
