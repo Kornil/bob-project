@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<main
+  className="container"
+>
+  <div>
+    <h1>
+      hello world!
+    </h1>
+    <p>
+      If you see this everything is working!
+    </p>
+  </div>
+  <ul
+    className="left"
+  >
+    <li>
+      <Link
+        replace={false}
+        to="/"
+      >
+        Home
+      </Link>
+    </li>
+  </ul>
+  <Routes />
+</main>
+`;

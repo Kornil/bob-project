@@ -1,0 +1,24 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Coverage reports
+coverage
+.nyc_output
+*.lcov
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Prod Bundle
+public
+
+# server
+server.js
+
+#env
+.env
