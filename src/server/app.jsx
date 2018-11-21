@@ -46,7 +46,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-app.get('/new', async (req, res) => {
+app.post('/new', async (req, res) => {
   const user = req.query;
 
   User.create({ Name: user.name, Bags: user.bags }, (err) => {
