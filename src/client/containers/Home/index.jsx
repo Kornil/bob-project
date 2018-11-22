@@ -40,17 +40,21 @@ class Home extends Component {
   };
 
   render() {
-    const { users } = this.state;
-    return (
-      <div>
-        <NewUser fetchData={this.fetchData} />
-        <StyledCardsContainer>
-          {users.map(user => (
-            <Card key={user._id} user={user} />
-          ))}
-        </StyledCardsContainer>
-      </div>
-    );
+    const { users, status } = this.state;
+    switch (status) {
+      case 'success':
+        return (
+          <StyledCardsContainer>
+            {users.map(user => (
+              <Card key={user._id} user={user} />
+            ))}
+          </StyledCardsContainer>
+        );
+      case 'error':
+        return <p>There was an error loading users, please refresh the page.</p>;
+      default:
+        return <p>Loading...</p>;
+    }
   }
 }
 
