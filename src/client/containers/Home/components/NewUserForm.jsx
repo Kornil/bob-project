@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class NewUser extends Component {
+class NewUserForm extends Component {
   sendData = async (e) => {
     const { fetchData } = this.props;
     const name = e.target.elements.name.value;
@@ -27,8 +27,8 @@ class NewUser extends Component {
   }
 }
 
-NewUser.propTypes = {
+NewUserForm.propTypes = {
   fetchData: PropTypes.func.isRequired,
 };
 
-export default NewUser;
+export default NewUserForm;
