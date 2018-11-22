@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 
 import Home from '.';
 
-fetchMock.get('*', JSON.stringify({ users: [{ _id: 123, user: { name: 'asd', bags: 4 } }] }));
+fetchMock.get('*', JSON.stringify({ users: [{ _id: 'asd', user: { name: 'asd', bags: 4 } }] }));
 
 describe('<Home />', () => {
   it('renders correctly', () => {
@@ -13,13 +13,14 @@ describe('<Home />', () => {
     render(<Home />, div);
     unmountComponentAtNode(div);
   });
-  it('renders cards correctly', async () => {
+
+  it('loads users correctly', async () => {
     const wrapper = shallow(<Home />);
 
     const instance = wrapper.instance();
 
     await instance.fetchData();
 
-    expect(wrapper.find('Card')).toHaveLength(1);
+    expect(wrapper.state('status')).toEqual('success');
   });
 });
