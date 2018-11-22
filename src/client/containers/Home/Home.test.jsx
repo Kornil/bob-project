@@ -1,8 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render, unmountComponentAtNode } from 'react-dom';
+
 import Home from '.';
 
-it('matches snapshot', () => {
-  const snap = shallow(<Home />);
-  expect(snap).toMatchSnapshot();
+it('renders correctly', () => {
+  const div = document.createElement('div');
+  render(<Home />, div);
+  unmountComponentAtNode(div);
 });
