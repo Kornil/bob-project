@@ -1,13 +1,6 @@
-import React, { Component } from 'react';
-import styled from 'react-emotion';
+import React, { Component, Fragment } from 'react';
 
-import { NewUser, Card } from './components';
-
-const StyledCardsContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 8%;
-`;
+import { CardsContainer, NewUserForm } from './components';
 
 class Home extends Component {
   state = {
@@ -41,20 +34,12 @@ class Home extends Component {
 
   render() {
     const { users, status } = this.state;
-    switch (status) {
-      case 'success':
-        return (
-          <StyledCardsContainer>
-            {users.map(user => (
-              <Card key={user._id} user={user} />
-            ))}
-          </StyledCardsContainer>
-        );
-      case 'error':
-        return <p>There was an error loading users, please refresh the page.</p>;
-      default:
-        return <p>Loading...</p>;
-    }
+    return (
+      <Fragment>
+        <NewUserForm fetchData={this.fetchData} />
+        <CardsContainer users={users} status={status} />
+      </Fragment>
+    );
   }
 }
 
